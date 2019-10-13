@@ -1,36 +1,90 @@
 import sortingalgs.*;
+import java.util.Random;
 
 public class SortTest {
 
     public static void main(String[] args) {
-        int[] even_num_array = new int[] { 93, 29, 3, 22, 25, 499, 29, 1, 23, 5};
-        int[] sorted_even_num_array = new int[]{1,3,5,22,23,25,29,29,93,499};
-        int[] odd_num_array = new int[] {1, -1, 3, 1111, 495, 443, 1324};
-        int[] sorted_odd_num_array = new int[]{-1, 1, 3, 443, 495, 1111, 1324};
-        int[] even_num_array_m = new int[] { 93, 29, 3, 22, 25, 499, 29, 1, 23, 5};
-        int[] odd_num_array_m = new int[] {1, -1, 3, 1111, 495, 443, 1324};
-        
-        QuickSort.sort(even_num_array);
-        QuickSort.sort(odd_num_array);
+        int size = 1000;
+        long total_time = 0 , current, end;
+        int[] arr = new int[size];
+        //qick sort
+        for(int i = 0; i < 100; i++)
+        {
+            arr = getUnsortedArray(size);
+            current = System.currentTimeMillis();
+            QuickSort.sort(arr);
+            end = System.currentTimeMillis();
+            if(isArraySorted(arr))
+            {
+                total_time += (end - current);
+            } 
+            else {
+                System.out.println("quick sort failed ");
+                System.exit(1);
+            }
 
+        }
+            System.out.println("quick sort takes " + total_time/100.0 + " milliseconds");
+
+        //merge sort 
+        for (int i = 0; i < 100; i++)
+        {
+            arr = getUnsortedArray(size);
+            current = System.currentTimeMillis();
+            arr = MergeSort.sort(arr);
+            end = System.currentTimeMillis();
+            if(isArraySorted(arr))
+            {
+                total_time += (end - current);
+            } 
+            else {
+                System.out.println("merge sort failed ");
+                System.exit(1);
+            }
+
+        }
+            System.out.println("merge sort takes " + total_time/100.0 + " milliseconds");
         
-        MergeSort.sort(even_num_array_m);
-        MergeSort.sort(odd_num_array_m);
-        BubbleSort.sort(odd_num_array);
-        
+        //bubble sort 
+        for(int i = 0; i< 100; i++)
+        {
+            arr = getUnsortedArray(size);
+            current = System.currentTimeMillis();
+            BubbleSort.sort(arr);
+            end = System.currentTimeMillis();
+            if (isArraySorted(arr))
+            {
+                total_time += end - current;
+            }   else {
+                System.out.println("bubble sort failed ");
+                System.exit(1);
+            }
+
+
+        }
+            System.out.println("bubble sort takes " + total_time/100.0 + " milliseconds");
     }
 
-    public static boolean compareTwoArrays(int[] a, int[] b)
+    public static boolean isArraySorted(int[] arr)
     {
-        if (a.length != b.length) return false;
-        for(int i = 0; i < a.length; i++)
+        for (int i = 1; i < arr.length; i++)
         {
-            if(a[i] != b[i])
+            if(arr[i-1] > arr[i])
             {
                 return false;
             }
         }
         return true;
     }
-
+    
+    public static int[] getUnsortedArray(int size)
+    {   
+            int[] result = new int[size];
+            Random r =  new Random();
+            for (int i = 0; i < size; i++)
+            {
+                result[i] = r.nextInt(10000);
+            }
+            return result;
+    }
 }

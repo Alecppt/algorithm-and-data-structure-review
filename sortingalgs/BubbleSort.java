@@ -10,16 +10,10 @@ public class BubbleSort
             {
                 if(arr[j] > arr[j+1])
                 {
-                    swap(arr[j], arr[j+1]);
+                    Helper.swap(arr, j, j+1);
                 }
             }
         }
     }
     
-    private static void swap(int a, int b)
-    {
-        int temp = a;
-        a = b; 
-        b = temp;
-    }
 }

@@ -3,11 +3,12 @@ package sortingalgs;
 
 public  class MergeSort 
 {
-    public static void sort(int[] arr)
+    public static int[] sort(int[] arr)
     {
-        arr = mergesort(arr);
+       arr = mergesort(arr);
+        return arr;
     }
-    private static   int[] mergesort(int[] array)
+    private static int[] mergesort(int[] array)
     {
         if(array.length < 2) return array;
         int mid =  array.length /2;
