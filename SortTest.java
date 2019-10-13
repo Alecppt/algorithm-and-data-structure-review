@@ -1,5 +1,4 @@
-import com.alecppt.quicksort.QuickSort;
-import com.alecppt.mergesort.MergeSort;
+import sortingalgs.*;
 
 public class SortTest {
 
@@ -11,25 +10,14 @@ public class SortTest {
         int[] even_num_array_m = new int[] { 93, 29, 3, 22, 25, 499, 29, 1, 23, 5};
         int[] odd_num_array_m = new int[] {1, -1, 3, 1111, 495, 443, 1324};
         
-        QuickSort.quick_sort(even_num_array);
-        QuickSort.quick_sort(odd_num_array);
-
-        String result = (
-            compareTwoArrays(even_num_array, sorted_even_num_array) &&
-            compareTwoArrays(odd_num_array, sorted_odd_num_array)
-            ) ? "quichsort completed" : "quichsort failed";
+        QuickSort.sort(even_num_array);
+        QuickSort.sort(odd_num_array);
 
         
-        int[] a = MergeSort.mergesort(even_num_array_m);
-        int[] b = MergeSort.mergesort(odd_num_array_m);
+        MergeSort.sort(even_num_array_m);
+        MergeSort.sort(odd_num_array_m);
+        BubbleSort.sort(odd_num_array);
         
-        String result_m = (
-            compareTwoArrays(a, sorted_even_num_array) &&
-            compareTwoArrays(b, sorted_odd_num_array)
-            ) ? "mergesort success" : "mergesort failed";
-
-        System.out.println(result +'\n' + result_m);
-
     }
 
     public static boolean compareTwoArrays(int[] a, int[] b)

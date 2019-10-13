@@ -1,8 +1,8 @@
-package com.alecppt.quicksort;
+package sortingalgs;
 
 public class QuickSort {
 
-    public static void quick_sort(int[] array){
+    public static void sort(int[] array){
         quick_sort(array, 0, array.length - 1);
     }
     

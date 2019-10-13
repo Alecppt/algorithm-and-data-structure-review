@@ -1,9 +1,13 @@
-package mergesort;
+package sortingalgs;
 
 
 public  class MergeSort 
 {
-    public static   int[] mergesort(int[] array)
+    public static void sort(int[] arr)
+    {
+        arr = mergesort(arr);
+    }
+    private static   int[] mergesort(int[] array)
     {
         if(array.length < 2) return array;
         int mid =  array.length /2;
@@ -51,9 +55,6 @@ public  class MergeSort
                 b_index++;
             }
         }
-
-
-
         return temp;
     }
 }
