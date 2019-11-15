@@ -1,4 +1,4 @@
-package sortingalgs;
+package sortingalgs.mergesort;
 
 
 public  class MergeSort 

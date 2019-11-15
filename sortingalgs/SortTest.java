@@ -1,4 +1,8 @@
-import sortingalgs.*;
+package sortingalgs;
+
+
+
+
 import java.util.Random;
 
 public class SortTest {
@@ -12,7 +16,7 @@ public class SortTest {
         {
             arr = getUnsortedArray(size);
             current = System.currentTimeMillis();
-            QuickSort.sort(arr);
+            sortingalgs.quicksort.QuickSort.sort(arr);
             end = System.currentTimeMillis();
             if(isArraySorted(arr))
             {
@@ -31,7 +35,7 @@ public class SortTest {
         {
             arr = getUnsortedArray(size);
             current = System.currentTimeMillis();
-            arr = MergeSort.sort(arr);
+            arr = sortingalgs.mergesort.MergeSort.sort(arr);
             end = System.currentTimeMillis();
             if(isArraySorted(arr))
             {
@@ -50,7 +54,7 @@ public class SortTest {
         {
             arr = getUnsortedArray(size);
             current = System.currentTimeMillis();
-            BubbleSort.sort(arr);
+            sortingalgs.bubblesort.BubbleSort.sort(arr);
             end = System.currentTimeMillis();
             if (isArraySorted(arr))
             {

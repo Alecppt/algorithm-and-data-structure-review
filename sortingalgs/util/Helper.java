@@ -1,4 +1,4 @@
-package sortingalgs;
+package sortingalgs.util;
 
 public final class Helper {
     public static void printArr(int[] a)

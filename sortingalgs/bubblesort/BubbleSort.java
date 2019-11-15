@@ -1,4 +1,5 @@
-package sortingalgs;
+package sortingalgs.bubblesort;
+import sortingalgs.util.*;
 
 public class BubbleSort 
 {

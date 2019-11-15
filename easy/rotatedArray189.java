@@ -1,12 +1,13 @@
-package array_problems;
+package easy;
 
 
-public class rotatedArray
+public class rotatedArray189
 {
     /*
     (Easy)
         Description 
         Given a string(Given in the way of char array) and an offset, rotate the string by offset in place. (rotate from left to right).
+        https://leetcode.com/problems/rotate-array/ 
     */
 
     /*

@@ -1,4 +1,4 @@
-package sortingalgs;
+package sortingalgs.quicksort;
 
 public class QuickSort {
 
