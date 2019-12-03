@@ -27,7 +27,7 @@ public class rotatedArray189
     {
         if(c == null || c.length == 0) return;
         int start = 0, end = c.length-1;
-        int offset = k % end;
+        int offset = k % c.length;
         reverse(c, start, end);
         reverse(c, start, offset - 1);
         reverse(c, offset, end);
