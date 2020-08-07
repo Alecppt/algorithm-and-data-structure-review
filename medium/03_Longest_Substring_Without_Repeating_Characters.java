@@ -7,12 +7,13 @@ import java.util.Set;
 
 class _03_Longest_Substring_Without_Repeating_Characters {
     public static void main(String[] argv) {
-        System.out.println("answer should be 3: " + sildingWindowJump("ababcbb"));
-        System.out.println("answer should be 1: " + sildingWindowJump("bbbb"));
-        System.out.println("answer should be 3: " + sildingWindowJump("pwwkew"));
-        System.out.println("answer should be 3: " + slidingWindow("ababcbb"));
-        System.out.println("answer should be 1: " + slidingWindow("bbbb"));
-        System.out.println("answer should be 3: " + slidingWindow("pwwkew"));
+        // System.out.println("answer should be 3: " + sildingWindowJump("ababcbb"));
+        // System.out.println("answer should be 1: " + sildingWindowJump("bbbb"));
+        // System.out.println("answer should be 3: " + sildingWindowJump("pwwkew"));
+        // System.out.println("answer should be 3: " + slidingWindow("ababcbb"));
+        // System.out.println("answer should be 1: " + slidingWindow("bbbb"));
+        // System.out.println("answer should be 3: " + slidingWindow("pwwkew"));
+        System.out.println("answer should be 5: " + sildingWindowJump("tmmzuxt"));
     }
 
     // brute force solution, Time O(n^3)
@@ -74,10 +75,10 @@ class _03_Longest_Substring_Without_Repeating_Characters {
         while (i < n && j < n) {
             if (map.containsKey(s.charAt(j))) {
                 i = Math.max(map.get(s.charAt(j)), i);
-                i++;
+                // i++;//this will cause a bug whereit forces i to advance after previous
+                // comparison
             }
-            map.put(s.charAt(j), j);
-            j++;
+            map.put(s.charAt(j), ++j); // save one step advanced to fix the bug
             ans = Math.max(ans, j - i);
         }
         return ans;
