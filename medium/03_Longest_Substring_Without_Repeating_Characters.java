@@ -1,13 +1,15 @@
 package medium;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 class _03_Longest_Substring_Without_Repeating_Characters {
     public static void main(String[] argv) {
-        System.out.println("answer should be 3: " + LengthOfLongestSubstring("ababcbb"));
-        System.out.println("answer should be 1: " + LengthOfLongestSubstring("bbbb"));
-        System.out.println("answer should be 3: " + LengthOfLongestSubstring("pwwkew"));
+        System.out.println("answer should be 3: " + sildingWindowJump("ababcbb"));
+        System.out.println("answer should be 1: " + sildingWindowJump("bbbb"));
+        System.out.println("answer should be 3: " + sildingWindowJump("pwwkew"));
         System.out.println("answer should be 3: " + slidingWindow("ababcbb"));
         System.out.println("answer should be 1: " + slidingWindow("bbbb"));
         System.out.println("answer should be 3: " + slidingWindow("pwwkew"));
@@ -61,9 +63,24 @@ class _03_Longest_Substring_Without_Repeating_Characters {
         }
         return ans;
     }
+
     // still some repetition when detecting a duplicate where i only advance 1 step
     // in "pwwkew", when 2nd w is detected, i need to 2 steps where it causes
     // reapetitive duplicate checks
     // maybe use hashmap to save index, so i can advance whatever steps needed
-
+    static int sildingWindowJump(String s) {
+        int ans = 0, i = 0, j = 0, n = s.length();
+        Map<Character, Integer> map = new HashMap<>();
+        while (i < n && j < n) {
+            if (map.containsKey(s.charAt(j))) {
+                i = Math.max(map.get(s.charAt(j)), i);
+                i++;
+            }
+            map.put(s.charAt(j), j);
+            j++;
+            ans = Math.max(ans, j - i);
+        }
+        return ans;
+    }
+    // Time O(n), Space O(n)
 }
