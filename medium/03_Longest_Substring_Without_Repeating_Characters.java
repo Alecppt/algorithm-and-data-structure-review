@@ -6,6 +6,14 @@ import java.util.Map;
 import java.util.Set;
 
 class _03_Longest_Substring_Without_Repeating_Characters {
+    /*
+     * Given a string, find the length of the longest substring without repeating
+     * characters.
+     * 
+     * Next challenges: Longest Substring with At Most Two Distinct Characters
+     * Longest Substring with At Most K Distinct Characters Subarrays with K
+     * Different Integers
+     */
     public static void main(String[] argv) {
         // System.out.println("answer should be 3: " + sildingWindowJump("ababcbb"));
         // System.out.println("answer should be 1: " + sildingWindowJump("bbbb"));
