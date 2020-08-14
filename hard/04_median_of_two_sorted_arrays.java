@@ -34,6 +34,11 @@ class solution {
      * 
      */
 
+    static double findMedianSol3(int[] A, int[] B) {
+
+        return 0.9;
+    }
+
     // find the median by iterating to the total_length/2, Time O(m+n), Space O(1)
     static double findMedianSol2(int[] A, int[] B) {
         int a_len = A.length, b_len = B.length, total_len = a_len + b_len, m = 0, n = 0, p = 0, q = 0;
