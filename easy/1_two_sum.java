@@ -40,6 +40,20 @@ class solution {
      * if no result, return new int[]{0, 0}
      * analysis: O[n] for one pass, space O(1)
      * 
+     * two pointer:
+     * init 2 pointer left = 0 and right = nums.length
+     * while(right>left)
+     * 1. check sum of num[left] and num[right] if match, ans found
+     * 2. if target not found then check num[right]> target - num[left] if yes,
+     * right--
+     * 3. else left++
+     * 
+     * require to sort the array first, and question ask to return indexs
+     * so need to create another copy for sorted array then find the index using the
+     * number found in sorted array
+     * analysis: O(n), space O(n);
+     *
+     * 
      * 
      * 
      */
